@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity, Image } from "react-native";
 import { ThemedText } from "@/components/ui/ThemedText";
 import BondButton from "@/components/ui/BondButton";
 import { heightPercentageToDP as hp } from "react-native-responsive-screen";
@@ -31,7 +31,10 @@ export default function LoginScreen() {
   return (
     <View className="flex-1 bg-white items-center px-8 pt-16">
       {/* Bond Logo Text */}
-      <Text className="text-6xl font-light text-black mb-8 tracking-wider">
+      <Text
+        className="font-light text-black mb-8 tracking-wider"
+        style={{ fontSize: hp(8) }}
+      >
         bond
       </Text>
 
@@ -45,7 +48,10 @@ export default function LoginScreen() {
       </View>
 
       {/* Tagline */}
-      <ThemedText className="text-lg text-gray-600 mb-12 text-center">
+      <ThemedText
+        className="text-gray-600 mb-12 text-center"
+        style={{ fontSize: hp(2.2) }}
+      >
         For Friends, Not Followers
       </ThemedText>
 
@@ -79,7 +85,10 @@ export default function LoginScreen() {
 
       {/* Forgot Password */}
       <TouchableOpacity onPress={handleForgotPassword}>
-        <ThemedText className="text-[10px] text-gray-600 mb-16">
+        <ThemedText
+          className="text-gray-600 mb-16"
+          style={{ fontSize: hp(1.2) }}
+        >
           Forgot Password?
         </ThemedText>
       </TouchableOpacity>
@@ -97,7 +106,7 @@ export default function LoginScreen() {
             source={require("../assets/images/chevron-down.png")}
           />
         </TouchableOpacity>
-        <ThemedText className="text-xs text-gray-600">
+        <ThemedText className="text-gray-600" style={{ fontSize: hp(1.5) }}>
           Tap to Sign up
         </ThemedText>
       </TouchableOpacity>
