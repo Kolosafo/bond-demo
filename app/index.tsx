@@ -6,13 +6,17 @@ import Scaffold from "@/components/ui/Scaffold";
 import InterestItem from "@/components/ui/InterestItem";
 import LoadingActivity from "@/components/ui/LoadingActivity";
 import BondButton from "@/components/ui/BondButton";
+import { useRouter } from "expo-router";
 
-const index = () => {
+const Index = () => {
+  const router = useRouter();
   return (
     <Scaffold _className="space-y-10">
       <LoadingActivity />
       <BondButton
-        onPress={() => {}}
+        onPress={() => {
+          router.push("/Profile");
+        }}
         title="Login"
         _mainContClassName="w-[30%] my-4"
       />
@@ -38,4 +42,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

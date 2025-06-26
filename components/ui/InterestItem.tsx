@@ -24,7 +24,7 @@ const InterestItem = ({
       style={{ backgroundColor: AppColors.BondGray }}
       className="px-10 py-0.5 rounded-full border-[0.5px] border-black mb-2"
     >
-      <ThemedText>{truncateString(text, 26)}</ThemedText>
+      <ThemedText className="">{truncateString(text, 26)}</ThemedText>
     </ThemedView>
   );
 };

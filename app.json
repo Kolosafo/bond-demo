@@ -35,6 +35,60 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": ["./assets/fonts/FiraSans-MediumItalic.ttf"],
+          "android": {
+            "fonts": [
+              {
+                "fontFamily": "Avenir",
+                "fontDefinitions": [
+                  {
+                    "path": "./assets/fonts/Avenir-Heavy.otf",
+                    "weight": 700
+                  },
+                  {
+                    "path": "./assets/fonts/Avenir-Light.otf",
+                    "weight": 400
+                  },
+                  {
+                    "path": "./assets/fonts/Avenir-Medium.otf",
+                    "weight": 500
+                  }
+                ]
+              },
+              {
+                "fontFamily": "Futura",
+                "fontDefinitions": [
+                  {
+                    "path": "./assets/fonts/Futura-Bold.otf",
+                    "weight": 700
+                  },
+                  {
+                    "path": "./assets/fonts/Futura-Light.otf",
+                    "weight": 400
+                  },
+                  {
+                    "path": "./assets/fonts/Futura-Medium.otf",
+                    "weight": 500
+                  }
+                ]
+              }
+            ]
+          },
+          "ios": {
+            "fonts": [
+              "./assets/fonts/Avenir-Light.otf",
+              "./assets/fonts/Avenir-Medium.otf",
+              "./assets/fonts/Avenir-Heavy.otf",
+              "./assets/fonts/Futura-Light.otf",
+              "./assets/fonts/Futura-Medium.otf",
+              "./assets/fonts/Futura-Bold.otf"
+            ]
+          }
+        }
       ]
     ],
     "experiments": {
