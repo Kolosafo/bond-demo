@@ -8,7 +8,7 @@ import { heightPercentageToDP as hp } from "react-native-responsive-screen";
 import { ThemedText } from "@/components/ui/ThemedText";
 import InterestItem from "@/components/ui/InterestItem";
 
-const Profile = () => {
+const Profile = ({ onPress }: { onPress?: () => void }) => {
   const { textThemeColor } = useTheme();
 
   const ImageWithFadeBg = () => (
@@ -29,7 +29,7 @@ const Profile = () => {
         <View
           className={`h-[95vh] w-[101%] self-center border-2 border-[${textThemeColor}] rounded-t-[35px] px-6 border-b-0 items-center py-5`}
         >
-          <TouchableOpacity>
+          <TouchableOpacity onPress={onPress}>
             <Image
               className={``}
               style={{ width: hp(6), height: hp(6) }}
