@@ -4,17 +4,19 @@ import { ThemedText } from "@/components/ui/ThemedText";
 import BondButton from "@/components/ui/BondButton";
 import { heightPercentageToDP as hp } from "react-native-responsive-screen";
 import BondInput from "@/components/ui/bondInput";
+import { useRouter } from "expo-router";
 
 export default function LoginScreen() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
+  const router = useRouter();
   const handleLogin = () => {
     setIsLoading(true);
     // Add your login logic here
     setTimeout(() => {
       setIsLoading(false);
+      router.push("/Home")
     }, 2000);
   };
 

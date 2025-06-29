@@ -2,6 +2,7 @@ import { ArrowLeft } from "@/assets/svg/arrowLeft";
 import { ArrowRight } from "@/assets/svg/arrowRight";
 import InterestItem from "@/components/ui/InterestItem";
 import { LinearGradient } from "expo-linear-gradient";
+import { useRouter } from "expo-router";
 import {
   Image,
   SafeAreaView,
@@ -29,7 +30,7 @@ const SilverMatch = () => {
     { text: "Rick & Morty", gradientBg: false },
     { text: "Conemporary Art", gradientBg: true },
   ];
-
+  const router = useRouter();
   const profileImageUri =
     "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face";
 
@@ -239,7 +240,7 @@ const SilverMatch = () => {
           paddingHorizontal: 30,
         }}
       >
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push("/goldMatch")}>
           <Image
             className="transform rotate-90 mb-5"
             style={{ width: hp(6), height: hp(6) }}

@@ -5,18 +5,25 @@ import {
   widthPercentageToDP as wp,
 } from "react-native-responsive-screen";
 import { ThemedText } from "../ui/ThemedText";
+import InterestItem from "../ui/InterestItem";
 
 const MatchCard = () => {
   return (
     <View
-      className="shadow w-full shadow-black border border-black items-center py-5"
+      className="shadow w-full shadow-black/50 items-center py-5"
       style={{ height: hp(75), backgroundColor: "#FFE974", borderRadius: 40 }}
     >
       <View className="relative w-full items-center">
         <View
           style={{ height: hp(18), width: hp(18) }}
-          className="border border-black rounded-full z-20 bg-red-500"
-        ></View>
+          className="rounded-full z-20"
+        >
+          <Image
+            className="w-full h-full"
+            resizeMode="cover"
+            source={require("../../assets/images/welcomeProfileImg.png")}
+          />
+        </View>
         <View
           style={{ height: hp(10), width: hp(10) }}
           className="border border-black rounded-full absolute left-10 top-10 items-center justify-center bg-[#FFFFFF]"
@@ -81,6 +88,23 @@ const MatchCard = () => {
             style={{ width: wp(15) }}
           />
         </View>
+        {[
+          "Travel",
+          "University of Abuja",
+          "Umbrella Academy",
+          "Party",
+          "Eating Pasta on the roof top with friends",
+          "Party Indoors",
+          "University of Abuja, Main Campus",
+          "Flight Academy",
+          "Fitness",
+        ].map((item, index) => (
+          <InterestItem
+            gradientBg={index / 2 === 1 || index / 3 === 2 || index / 4 === 1}
+            key={item}
+            text={item}
+          />
+        ))}
       </View>
     </View>
   );

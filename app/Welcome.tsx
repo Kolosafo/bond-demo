@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import {
   heightPercentageToDP as hp,
@@ -9,8 +9,10 @@ import { ThemedText } from "@/components/ui/ThemedText";
 import InterestItem from "@/components/ui/InterestItem";
 import UserCard from "@/components/ui/UserCard";
 import MatchCard from "@/components/matches/MatchCard";
+import { useRouter } from "expo-router";
 
 const Welcome = () => {
+  const router = useRouter();
   return (
     <Scaffold>
       <Text className="" style={{ fontSize: hp(3) }}>
@@ -181,6 +183,43 @@ const Welcome = () => {
       <View className="px-4 w-full">
         <MatchCard />
       </View>
+      <View className="flex-row items-center space-x-2 self-end px-6">
+        <ThemedText>Say Hi!</ThemedText>
+        <Image
+          style={{ width: hp(5), height: hp(5) }}
+          source={require("../assets/images/chatIcon.png")}
+        />
+      </View>
+      <ThemedText
+        className="text-center w-[70%]"
+        style={{ fontFamily: "Avenir", fontSize: hp(1.7) }}
+      >
+        And easily start a converstion based on your mutual interests,
+        you&apos;ve got alot to bond over!
+      </ThemedText>
+      <ThemedText
+        className="text-center w-[70%]"
+        style={{ fontFamily: "Avenir", fontSize: hp(1.7) }}
+      >
+        Couldn&apos;t be simpler right?
+      </ThemedText>
+      <ThemedText
+        className="text-center w-[60%] mb-4"
+        style={{ fontFamily: "Avenir", fontSize: hp(1.7) }}
+      >
+        Now all you need to do is enter your interests
+      </ThemedText>
+      <TouchableOpacity
+        className="items-center space-x-2 mb-16"
+        onPress={() => {
+          router.push("/login");
+        }}
+      >
+        <Image
+          style={{ width: hp(5), height: hp(5) }}
+          source={require("../assets/images/chevron-right.png")}
+        />
+      </TouchableOpacity>
     </Scaffold>
   );
 };
