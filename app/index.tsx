@@ -7,15 +7,17 @@ import InterestItem from "@/components/ui/InterestItem";
 import LoadingActivity from "@/components/ui/LoadingActivity";
 import BondButton from "@/components/ui/BondButton";
 import { useRouter } from "expo-router";
+import Welcome from "./Welcome";
 
 const Index = () => {
   const router = useRouter();
   return (
     <Scaffold _className="space-y-10">
-      <LoadingActivity />
+      <Welcome />
+      {/* <LoadingActivity />
       <BondButton
         onPress={() => {
-          router.push("/Home");
+          router.push("/Welcome");
         }}
         title="Login"
         _mainContClassName="w-[30%] my-4"
@@ -37,7 +39,7 @@ const Index = () => {
       ))}
       {DummyUsers.map((user, index) => (
         <UserCard _className="mb-4" {...user} key={index} />
-      ))}
+      ))} */}
     </Scaffold>
   );
 };

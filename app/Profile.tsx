@@ -7,10 +7,17 @@ import Entypo from "@expo/vector-icons/Entypo";
 import { heightPercentageToDP as hp } from "react-native-responsive-screen";
 import { ThemedText } from "@/components/ui/ThemedText";
 import InterestItem from "@/components/ui/InterestItem";
+import { useRouter } from "expo-router";
 
-const Profile = ({ onPress }: { onPress?: () => void }) => {
+const Profile = ({
+  onPress,
+  onProfilePress,
+}: {
+  onPress?: () => void;
+  onProfilePress?: () => void;
+}) => {
   const { textThemeColor } = useTheme();
-
+  const router = useRouter();
   const ImageWithFadeBg = () => (
     <>
       <Image
@@ -46,9 +53,10 @@ const Profile = ({ onPress }: { onPress?: () => void }) => {
               <ImageWithFadeBg />
               <Entypo name="plus" size={40} color="black" />
             </View>
-            <View
+            <TouchableOpacity
               className="border-4 rounded-full overflow-hidden"
               style={{ height: hp(20), width: hp(20) }}
+              onPress={() => router.push("/silverMatch")}
             >
               <Image
                 source={{
@@ -57,7 +65,7 @@ const Profile = ({ onPress }: { onPress?: () => void }) => {
                 className="h-full w-full"
                 resizeMode="cover"
               />
-            </View>
+            </TouchableOpacity>
             <View
               className="border-2 rounded-full self-end -mb-10 items-center justify-center overflow-hidden -ml-6"
               style={{ height: hp(10), width: hp(10) }}

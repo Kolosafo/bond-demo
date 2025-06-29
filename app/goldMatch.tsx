@@ -1,6 +1,7 @@
 import { ArrowRight } from "@/assets/svg/arrowRight";
 import InterestItem from "@/components/ui/InterestItem";
 import { LinearGradient } from "expo-linear-gradient";
+import { useRouter } from "expo-router";
 import {
   Image,
   SafeAreaView,
@@ -14,8 +15,6 @@ import { heightPercentageToDP as hp } from "react-native-responsive-screen";
 const chatImg = require("../assets/images/chat.png");
 const talkImg = require("../assets/images/talk.png");
 const locationImg = require("../assets/images/location.png");
-
-
 
 const GoldMatch = () => {
   const interestData = [
@@ -33,7 +32,7 @@ const GoldMatch = () => {
 
   const profileImageUri =
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face";
-
+  const router = useRouter();
   return (
     <SafeAreaView className="flex-1 bg-white">
       {/* Main card container */}
@@ -231,7 +230,7 @@ const GoldMatch = () => {
           paddingHorizontal: 30,
         }}
       >
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push("/")}>
           <Image
             className="transform rotate-90 mb-5"
             style={{ width: hp(6), height: hp(6) }}

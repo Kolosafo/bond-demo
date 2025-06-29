@@ -6,22 +6,30 @@ const MutualInterestDots = ({
   _className,
   gradientClassName,
   interestsCount,
+  whiteDots,
 }: {
   _className?: string;
   gradientClassName?: string;
   interestsCount: number;
+  whiteDots?: boolean;
 }) => {
+  const firstGradient = whiteDots ? "#fff" : "#CFA6F6";
+  const secondGradient = whiteDots ? "#fff" : "#240909";
   return (
     <View className={`flex-row space-x-2 items-center ${_className}`}>
       {[...Array(10)].map((_, index) => (
         <View
           key={index}
-          style={{ width: wp(4), height: wp(4) }}
-          className="rounded-full overflow-hidden border border-black"
+          style={{
+            width: wp(4),
+            height: wp(4),
+            borderColor: whiteDots ? "white" : "black",
+          }}
+          className="rounded-full overflow-hidden border"
         >
           {index < interestsCount ? (
             <LinearGradient
-              colors={["#CFA6F6", "#240909"]}
+              colors={[firstGradient, secondGradient]}
               className={`${gradientClassName}`}
               style={{ width: "100%", height: "100%", borderRadius: 999 }}
             />
