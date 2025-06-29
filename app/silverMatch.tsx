@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { heightPercentageToDP as hp } from "react-native-responsive-screen";
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 
 // Import chat and talk images
 const chatImg = require("../assets/images/chat.png");
@@ -35,183 +35,219 @@ const SilverMatch = () => {
     "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face";
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
       {/* Main card container */}
       <View
-        className="flex-1 rounded-[50px]"
         style={{
-          marginHorizontal: 20,
-          marginTop: 20,
-          marginBottom: 130,
+          flex: 1,
+          borderRadius: wp("12%"),
+          marginHorizontal: wp("5%"),
+          marginTop: hp("2%"),
+          marginBottom: hp("14%"),
           backgroundColor: "#E5E4E2",
           shadowColor: "#000",
           shadowOffset: {
             width: 0,
-            height: 4,
+            height: hp("0.5%"),
           },
           shadowOpacity: 0.15,
-          shadowRadius: 12,
+          shadowRadius: wp("3%"),
           elevation: 8,
-          paddingHorizontal: 24,
-          paddingTop: 20,
-          paddingBottom: 10,
+          paddingHorizontal: wp("6%"),
+          paddingTop: hp("2.5%"),
+          paddingBottom: hp("1.5%"),
         }}
       >
         {/* Close button */}
-        <View className="items-end mb-5">
+        <View style={{ alignItems: "flex-end", marginBottom: hp("2%") }}>
           <LinearGradient
             colors={["#FF0000", "#8C0000"]}
             start={{ x: 0, y: 0 }}
             end={{ x: 0, y: 1 }}
-            style={{ borderRadius: 12 }}
+            style={{ borderRadius: wp("3%") }}
           >
             <TouchableOpacity
-              className="bg-transparent rounded-xl"
               style={{
-                paddingHorizontal: 12,
-                paddingVertical: 4,
+                backgroundColor: "transparent",
+                borderRadius: wp("3%"),
+                paddingHorizontal: wp("3%"),
+                paddingVertical: hp("0.5%"),
               }}
             >
-              <Text className="text-white text-xs font-medium">Report</Text>
+              <Text style={{ color: "#fff", fontSize: hp("1.5%"), fontWeight: "500" }}>Report</Text>
             </TouchableOpacity>
           </LinearGradient>
         </View>
 
         {/* Profile section */}
-        <View className="items-center mb-8" style={{ marginTop: -40 }}>
+        <View style={{ alignItems: "center", marginBottom: hp("3%"), marginTop: -hp("5%") }}>
           {/* Numbers and profile image */}
           <View
-            className="flex-row items-center justify-center mb-4"
-            style={{ gap: 20 }}
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+              marginBottom: hp("2%"),
+              gap: wp("5%"),
+            }}
           >
             {/* Left number circle with profile image */}
             <View
-              className="w-20 h-20 rounded-full border-2 border-black justify-center items-center relative overflow-hidden"
               style={{
+                width: wp("20%"),
+                height: wp("20%"),
+                borderRadius: wp("10%"),
+                borderWidth: 2,
+                borderColor: "#000",
+                justifyContent: "center",
+                alignItems: "center",
+                position: "relative",
                 zIndex: 2,
-                marginRight: -48,
+                marginRight: -wp("12%"),
                 marginBottom: 0,
+                overflow: "hidden",
               }}
             >
               {/* Background profile image with low opacity */}
               <Image
                 source={{ uri: profileImageUri }}
-                className="w-full h-full absolute"
                 style={{
+                  width: "100%",
+                  height: "100%",
+                  position: "absolute",
                   resizeMode: "cover",
                   opacity: 0.5,
                 }}
               />
               {/* White overlay */}
               <View
-                className="absolute w-full h-full bg-white"
-                style={{ opacity: 0.85 }}
+                style={{
+                  position: "absolute",
+                  width: "100%",
+                  height: "100%",
+                  backgroundColor: "#fff",
+                  opacity: 0.85,
+                }}
               />
               {/* Number text */}
-              <Text
-                className="text-2xl font-bold text-black"
-                style={{ zIndex: 1 }}
-              >
-                1
-              </Text>
+              <Text style={{ fontSize: hp("3%"), fontWeight: "bold", color: "#000", zIndex: 1 }}>1</Text>
             </View>
 
             {/* Profile image */}
             <View
-              className="rounded-full border-4 border-black overflow-hidden bg-blue-600 relative"
               style={{
-                width: 180,
-                height: 180,
+                width: wp("45%"),
+                height: wp("45%"),
+                borderRadius: wp("22.5%"),
+                borderWidth: 4,
+                borderColor: "#000",
+                overflow: "hidden",
+                backgroundColor: "#1E40AF",
+                position: "relative",
                 zIndex: 20,
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
               <Image
                 source={{ uri: profileImageUri }}
-                className="w-full h-full"
-                style={{ resizeMode: "cover" }}
+                style={{ width: "100%", height: "100%", resizeMode: "cover" }}
               />
             </View>
 
             {/* Right number circle with profile image */}
             <View
-              className="w-20 h-20 rounded-full border-2 border-black justify-center items-center relative overflow-hidden"
               style={{
+                width: wp("20%"),
+                height: wp("20%"),
+                borderRadius: wp("10%"),
+                borderWidth: 2,
+                borderColor: "#000",
+                justifyContent: "center",
+                alignItems: "center",
+                position: "relative",
                 zIndex: 2,
-                marginLeft: -48,
+                marginLeft: -wp("12%"),
                 marginBottom: 0,
+                overflow: "hidden",
               }}
             >
               {/* Background profile image with low opacity */}
               <Image
                 source={{ uri: profileImageUri }}
-                className="w-full h-full absolute"
                 style={{
+                  width: "100%",
+                  height: "100%",
+                  position: "absolute",
                   resizeMode: "cover",
                   opacity: 0.5,
                 }}
               />
               {/* White overlay */}
               <View
-                className="absolute w-full h-full bg-white"
-                style={{ opacity: 0.85 }}
+                style={{
+                  position: "absolute",
+                  width: "100%",
+                  height: "100%",
+                  backgroundColor: "#fff",
+                  opacity: 0.85,
+                }}
               />
               {/* Number text */}
-              <Text
-                className="text-2xl font-bold text-black"
-                style={{ zIndex: 1 }}
-              >
-                4
-              </Text>
+              <Text style={{ fontSize: hp("3%"), fontWeight: "bold", color: "#000", zIndex: 1 }}>3</Text>
             </View>
           </View>
 
           {/* Emoji */}
-          <Text className="text-2xl mb-1">🌟</Text>
+          <Text style={{ fontSize: hp("3%"), marginBottom: hp("1%") }}>🌟</Text>
 
           {/* Name and age */}
-          <Text className="text-2xl font-bold text-black mb-1">
+          <Text style={{ fontSize: hp("3%"), fontWeight: "bold", color: "#000", marginBottom: hp("1%") }}>
             Alex Rodriguez 26
           </Text>
 
           {/* Location */}
-          <View className="flex-row items-center mb-1">
+          <View style={{ flexDirection: "row", alignItems: "center", marginBottom: hp("1%") }}>
             <Image
               source={locationImg}
-              className="w-4 h-4"
-              style={{ resizeMode: "contain" }}
+              style={{ width: wp("4%"), height: wp("4%"), resizeMode: "contain" }}
             />
-            <Text className="text-xs text-black ml-1">Austin, TX</Text>
+            <Text style={{ fontSize: hp("1.5%"), color: "#000", marginLeft: wp("1%") }}>Austin, TX</Text>
           </View>
 
           {/* Mutual interests header */}
           <View
-            className="flex-row items-center mb-0 w-full justify-center"
             style={{
-              marginLeft: 1,
-              gap: 2,
+              flexDirection: "row",
+              alignItems: "center",
+              marginBottom: 0,
+              width: "100%",
+              justifyContent: "center",
+              marginLeft: wp("1%"),
+              gap: wp("1%"),
             }}
           >
             {/* Left line and arrows */}
-            <View className="flex-row items-center justify-center">
-              <View style={{ marginRight: -22 }}>
+            <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
+              <View style={{ marginRight: -wp("5.5%") }}>
                 <ArrowLeft color="#000" opacity={0.3} />
               </View>
-              <View style={{ marginRight: -16 }}>
+              <View style={{ marginRight: -wp("4%") }}>
                 <ArrowLeft color="#000" opacity={1} />
               </View>
-              <View className="bg-black" style={{ height: 3, width: 36 }} />
+              <View style={{ backgroundColor: "#000", height: hp("0.4%"), width: wp("9%") }} />
             </View>
             {/* Text */}
-            <Text className="text-xl font-semibold text-black mx-2">
+            <Text style={{ fontSize: hp("2.2%"), fontWeight: "600", color: "#000", marginHorizontal: wp("2%") }}>
               5 Mutual Interests
             </Text>
             {/* Right line and arrows */}
-            <View className="flex-row items-center justify-center">
-              <View className="bg-black" style={{ height: 3, width: 36 }} />
-              <View style={{ marginLeft: -16 }}>
+            <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
+              <View style={{ backgroundColor: "#000", height: hp("0.4%"), width: wp("9%") }} />
+              <View style={{ marginLeft: -wp("4%") }}>
                 <ArrowRight color="#000" opacity={1} />
               </View>
-              <View style={{ marginLeft: -22 }}>
+              <View style={{ marginLeft: -wp("5.5%") }}>
                 <ArrowRight color="#000" opacity={0.3} />
               </View>
             </View>
@@ -219,7 +255,7 @@ const SilverMatch = () => {
         </View>
 
         {/* Interest tags */}
-        <View className="items-center flex-1" style={{ marginTop: -20 }}>
+        <View style={{ alignItems: "center", flex: 1, marginTop: -hp("2.5%") }}>
           {interestData.map((interest, index) => (
             <InterestItem
               key={index}
@@ -232,60 +268,46 @@ const SilverMatch = () => {
 
       {/* Bottom navigation with Say Hi button */}
       <View
-        className="absolute flex-row justify-between items-center"
         style={{
-          bottom: 30,
+          position: "absolute",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          bottom: hp("4%"),
           left: 0,
           right: 0,
-          paddingHorizontal: 30,
+          paddingHorizontal: wp("8%"),
         }}
       >
-        <TouchableOpacity onPress={() => router.push("/goldMatch")}>
+        <TouchableOpacity onPress={() => router.push("/goldMatch")}> 
           <Image
-            className="transform rotate-90 mb-5"
-            style={{ width: hp(6), height: hp(6) }}
+            style={{ transform: [{ rotate: "90deg" }], marginBottom: hp("2%"), width: hp("6%"), height: hp("6%") }}
             resizeMode="contain"
             source={require("../assets/images/chevron-down.png")}
           />
         </TouchableOpacity>
 
         <TouchableOpacity
-          className="flex-row items-center"
           style={{
-            gap: 8,
-            marginBottom: 10,
+            flexDirection: "row",
+            alignItems: "center",
+            gap: wp("2%"),
+            marginBottom: hp("1.5%"),
           }}
         >
-          <Text
-            className="text-lg font-semibold text-black"
-            style={{ marginBottom: 15 }}
-          >
+          <Text style={{ fontSize: hp("2%"), fontWeight: "600", color: "#000", marginBottom: hp("1.5%") }}>
             Say Hi!
           </Text>
-          <View className="w-10 h-10 rounded-full justify-center items-center relative">
+          <View style={{ width: wp("10%"), height: wp("10%"), borderRadius: wp("5%"), justifyContent: "center", alignItems: "center", position: "relative" }}>
             {/* Chat icon as background */}
             <Image
               source={chatImg}
-              className="absolute"
-              style={{
-                width: 48,
-                height: 48,
-                top: -10,
-                left: 6,
-                resizeMode: "contain",
-              }}
+              style={{ position: "absolute", width: wp("12%"), height: wp("12%"), top: -hp("0.5%"), left: wp("1%"), resizeMode: "contain" }}
             />
             {/* Talk icon overlayed in center */}
             <Image
               source={talkImg}
-              className="absolute"
-              style={{
-                width: 30,
-                height: 30,
-                top: -6,
-                left: 15,
-                resizeMode: "contain",
-              }}
+              style={{ position: "absolute", width: wp("7%"), height: wp("7%"), top: hp("0.5%"), left: wp("3%"), resizeMode: "contain" }}
             />
           </View>
         </TouchableOpacity>
