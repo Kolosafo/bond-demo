@@ -34,7 +34,10 @@ export default function RootLayout() {
             }}
           >
             <Stack.Screen name="Index" />
+            <Stack.Screen name="silverMatch" />
+            <Stack.Screen name="goldMatch" />
             <Stack.Screen name="Profile" />
+            <Stack.Screen name="login" />
             <Stack.Screen name="+not-found" />
             <Stack.Screen name="Home" />
             <Stack.Screen name="Welcome" />
