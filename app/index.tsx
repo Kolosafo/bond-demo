@@ -15,7 +15,7 @@ const Index = () => {
       <LoadingActivity />
       <BondButton
         onPress={() => {
-          router.push("/Profile");
+          router.push("/Home");
         }}
         title="Login"
         _mainContClassName="w-[30%] my-4"
