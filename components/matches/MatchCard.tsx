@@ -76,7 +76,7 @@ const MatchCard = () => {
             source={require("../../assets/images/leftArrow.png")}
             resizeMode="contain"
             className=""
-            style={{ width: wp(15) }}
+            style={{ width: wp(10) }}
           />
           <ThemedText style={{ fontSize: hp(1.9) }} className="font-bold">
             8 Mutual Interests
@@ -85,7 +85,7 @@ const MatchCard = () => {
             source={require("../../assets/images/rightArrow.png")}
             resizeMode="contain"
             className=""
-            style={{ width: wp(15) }}
+            style={{ width: wp(10) }}
           />
         </View>
         {[

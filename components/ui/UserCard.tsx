@@ -37,7 +37,7 @@ const UserCard = ({
         height: hp(12),
         width: "100%",
       }}
-      className={`rounded-full flex-row p-2 ${_className}`}
+      className={`rounded-full flex-row p-2  ${_className}`}
     >
       <View className="w-[25%] h-full rounded-full border border-black mr-1.5 overflow-hidden">
         <Image
@@ -48,7 +48,7 @@ const UserCard = ({
       </View>
       <View className="justify-around ">
         <View
-          className={`w-[112%] ${
+          className={`w-[110%] ${
             accountType !== "dark" && accountType !== "light"
               ? "pb-4 border-b border-black"
               : ""
@@ -66,21 +66,28 @@ const UserCard = ({
             {name} {emoji}
           </ThemedText>
         </View>
-        {accountType === "dark" ||
-          (accountType === "light" && (
-            <View
-              className="w-[110%] rounded-full"
-              style={{
-                height: hp(0.8),
-                backgroundColor:
-                  accountType === "light" ? "#fff" : AppColors.BondYellow,
-              }}
-            ></View>
-          ))}
+        {accountType === "dark" ? (
+          <View
+            className="w-[110%] rounded-full"
+            style={{
+              height: hp(0.8),
+              backgroundColor: AppColors.BondYellow,
+            }}
+          ></View>
+        ) : accountType === "light" ? (
+          <View
+            className="w-[110%] rounded-full"
+            style={{
+              height: hp(0.8),
+              backgroundColor: "#fff",
+            }}
+          ></View>
+        ) : null}
 
         <MutualInterestDots
           whiteDots={whiteDots}
           interestsCount={mutualInterestsCount}
+          _className="w-full"
         />
       </View>
     </View>
