@@ -16,13 +16,13 @@ const MutualInterestDots = ({
   const firstGradient = whiteDots ? "#fff" : "#CFA6F6";
   const secondGradient = whiteDots ? "#fff" : "#240909";
   return (
-    <View className={`flex-row space-x-2 items-center ${_className}`}>
+    <View className={`flex-row space-x-1.5 items-center ${_className}`}>
       {[...Array(10)].map((_, index) => (
         <View
           key={index}
           style={{
-            width: wp(4),
-            height: wp(4),
+            width: wp(3.7),
+            height: wp(3.7),
             borderColor: whiteDots ? "white" : "black",
           }}
           className="rounded-full overflow-hidden border"
