@@ -8,6 +8,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  ScrollView,
 } from "react-native";
 import {
   heightPercentageToDP as hp,
@@ -18,6 +19,7 @@ import {
 const chatImg = require("../assets/images/chat.png");
 const talkImg = require("../assets/images/talk.png");
 const locationImg = require("../assets/images/location.png");
+const CelinaImg = require("../assets/images/Celina.png");
 
 const GoldMatch = () => {
   const interestData = [
@@ -33,20 +35,17 @@ const GoldMatch = () => {
     { text: "Contemporary Art", gradientBg: true },
   ];
 
-  const profileImageUri =
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face";
   const router = useRouter();
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
       {/* Main card container */}
       <View
         style={{
-          flex: 1,
+          height: hp("85%"),
           backgroundColor: "#FFE974",
           borderRadius: wp("12%"),
           marginHorizontal: wp("5%"),
           marginTop: hp("2%"),
-          marginBottom: hp("16%"),
           shadowColor: "#000",
           shadowOffset: {
             width: 0,
@@ -60,259 +59,239 @@ const GoldMatch = () => {
           paddingBottom: hp("1.5%"),
         }}
       >
-        {/* Close button */}
-        <View style={{ alignItems: "flex-end", marginBottom: hp("2%") }}>
-          <LinearGradient
-            colors={["#FF0000", "#8C0000"]}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 0, y: 1 }}
-            style={{ borderRadius: wp("3%") }}
-          >
-            <TouchableOpacity
-              style={{
-                backgroundColor: "transparent",
-                borderRadius: wp("3%"),
-                paddingHorizontal: wp("3%"),
-                paddingVertical: hp("0.5%"),
-              }}
-            >
-              <Text
-                style={{
-                  color: "#fff",
-                  fontSize: hp("1.5%"),
-                  fontWeight: "500",
-                }}
-              >
-                Report
-              </Text>
-            </TouchableOpacity>
-          </LinearGradient>
-        </View>
-
-        {/* Profile section */}
-        <View
-          style={{
-            alignItems: "center",
-            marginBottom: hp("3%"),
-            marginTop: -hp("5%"),
-          }}
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ flexGrow: 1 }}
         >
-          {/* Numbers and profile image */}
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "center",
-              marginBottom: hp("2%"),
-              gap: wp("5%"),
-            }}
-          >
-            {/* Left number circle with profile image */}
-            <View
-              style={{
-                width: wp("20%"),
-                height: wp("20%"),
-                borderRadius: wp("10%"),
-                borderWidth: 2,
-                borderColor: "#000",
-                justifyContent: "center",
-                alignItems: "center",
-                position: "relative",
-                zIndex: 2,
-                marginRight: -wp("12%"),
-                marginBottom: 0,
-                overflow: "hidden",
-              }}
+          {/* Close button */}
+          <View style={{ alignItems: "flex-end", marginBottom: hp("2%") }}>
+            <LinearGradient
+              colors={["#FF0000", "#8C0000"]}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 0, y: 1 }}
+              style={{ borderRadius: wp("3%") }}
             >
-              {/* Background profile image with low opacity */}
-              <Image
-                source={{ uri: profileImageUri }}
+              <TouchableOpacity
                 style={{
-                  width: "100%",
-                  height: "100%",
-                  position: "absolute",
-                  resizeMode: "cover",
-                  opacity: 0.5,
-                }}
-              />
-              {/* White overlay */}
-              <View
-                style={{
-                  position: "absolute",
-                  width: "100%",
-                  height: "100%",
-                  backgroundColor: "#fff",
-                  opacity: 0.85,
-                }}
-              />
-              {/* Number text */}
-              <Text
-                style={{
-                  fontSize: hp("3%"),
-                  fontWeight: "bold",
-                  color: "#000",
-                  zIndex: 1,
+                  backgroundColor: "transparent",
+                  borderRadius: wp("3%"),
+                  paddingHorizontal: wp("3%"),
+                  paddingVertical: hp("0.5%"),
                 }}
               >
-                1
-              </Text>
-            </View>
-
-            {/* Profile image */}
-            <View
-              style={{
-                width: wp("45%"),
-                height: wp("45%"),
-                borderRadius: wp("22.5%"),
-                borderWidth: 4,
-                borderColor: "#000",
-                overflow: "hidden",
-                backgroundColor: "#E91E63",
-                position: "relative",
-                zIndex: 20,
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Image
-                source={{ uri: profileImageUri }}
-                style={{ width: "100%", height: "100%", resizeMode: "cover" }}
-              />
-            </View>
-
-            {/* Right number circle with profile image */}
-            <View
-              style={{
-                width: wp("20%"),
-                height: wp("20%"),
-                borderRadius: wp("10%"),
-                borderWidth: 2,
-                borderColor: "#000",
-                justifyContent: "center",
-                alignItems: "center",
-                position: "relative",
-                zIndex: 2,
-                marginLeft: -wp("12%"),
-                marginBottom: 0,
-                overflow: "hidden",
-              }}
-            >
-              {/* Background profile image with low opacity */}
-              <Image
-                source={{ uri: profileImageUri }}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  position: "absolute",
-                  resizeMode: "cover",
-                  opacity: 0.5,
-                }}
-              />
-              {/* White overlay */}
-              <View
-                style={{
-                  position: "absolute",
-                  width: "100%",
-                  height: "100%",
-                  backgroundColor: "#fff",
-                  opacity: 0.85,
-                }}
-              />
-              {/* Number text */}
-              <Text
-                style={{
-                  fontSize: hp("3%"),
-                  fontWeight: "bold",
-                  color: "#000",
-                  zIndex: 1,
-                }}
-              >
-                3
-              </Text>
-            </View>
+                <Text
+                  style={{
+                    color: "#fff",
+                    fontSize: hp("1.5%"),
+                    fontWeight: "500",
+                  }}
+                >
+                  Report
+                </Text>
+              </TouchableOpacity>
+            </LinearGradient>
           </View>
 
-          {/* Emoji */}
-          <Text style={{ fontSize: hp("3%"), marginBottom: hp("1%") }}>😊</Text>
-
-          {/* Name and age */}
-          <Text
-            style={{
-              fontSize: hp("3%"),
-              fontWeight: "bold",
-              color: "#000",
-              marginBottom: hp("1%"),
-            }}
-          >
-            Jack Sparrow 23
-          </Text>
-
-          {/* Location */}
+          {/* Profile section */}
           <View
             style={{
-              flexDirection: "row",
               alignItems: "center",
-              marginBottom: hp("1%"),
+              marginBottom: hp("3%"),
+              marginTop: -hp("3%"),
             }}
           >
-            <Image
-              source={locationImg}
-              style={{
-                width: wp("4%"),
-                height: wp("4%"),
-                resizeMode: "contain",
-              }}
-            />
-            <Text
-              style={{
-                fontSize: hp("1.5%"),
-                color: "#000",
-                marginLeft: wp("1%"),
-              }}
-            >
-              San Diego, CA
-            </Text>
-          </View>
-
-          {/* Mutual interests header */}
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              marginBottom: 0,
-              width: "100%",
-              justifyContent: "center",
-              marginLeft: wp("12%"),
-              gap: wp("1%"),
-            }}
-          >
-            {/* Left line */}
-            <View
-              style={{
-                backgroundColor: "#000",
-                height: hp("0.4%"),
-                width: wp("9%"),
-              }}
-            />
-            {/* Text */}
-            <Text
-              style={{
-                fontSize: hp("2.2%"),
-                fontWeight: "600",
-                color: "#000",
-                marginHorizontal: wp("2%"),
-              }}
-            >
-              9 Mutual Interests
-            </Text>
-            {/* Right line and arrows */}
+            {/* Numbers and profile image */}
             <View
               style={{
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "center",
+                marginBottom: hp("2%"),
+                gap: wp("5%"),
               }}
             >
+              {/* Left number circle with profile image */}
+              <View
+                style={{
+                  width: wp("20%"),
+                  height: wp("20%"),
+                  borderRadius: wp("10%"),
+                  borderWidth: 2,
+                  borderColor: "#000",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  position: "relative",
+                  zIndex: 2,
+                  marginRight: -wp("12%"),
+                  marginBottom: 0,
+                  overflow: "hidden",
+                }}
+              >
+                {/* Background profile image with low opacity */}
+                <Image
+                  source={CelinaImg}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    position: "absolute",
+                    resizeMode: "cover",
+                    opacity: 0.5,
+                  }}
+                />
+                {/* White overlay */}
+                <View
+                  style={{
+                    position: "absolute",
+                    width: "100%",
+                    height: "100%",
+                    backgroundColor: "#fff",
+                    opacity: 0.85,
+                  }}
+                />
+                {/* Number text */}
+                <Text
+                  style={{
+                    fontSize: hp("3%"),
+                    fontWeight: "bold",
+                    color: "#000",
+                    zIndex: 1,
+                  }}
+                >
+                  1
+                </Text>
+              </View>
+
+              {/* Profile image */}
+              <View
+                style={{
+                  width: wp("45%"),
+                  height: wp("45%"),
+                  borderRadius: wp("22.5%"),
+                  borderWidth: 4,
+                  borderColor: "#000",
+                  overflow: "hidden",
+                  backgroundColor: "#000",
+                  position: "relative",
+                  zIndex: 20,
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Image
+                  source={CelinaImg}
+                  style={{ width: "100%", height: "100%", resizeMode: "cover" }}
+                />
+              </View>
+
+              {/* Right number circle with profile image */}
+              <View
+                style={{
+                  width: wp("20%"),
+                  height: wp("20%"),
+                  borderRadius: wp("10%"),
+                  borderWidth: 2,
+                  borderColor: "#000",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  position: "relative",
+                  zIndex: 2,
+                  marginLeft: -wp("12%"),
+                  marginBottom: 0,
+                  overflow: "hidden",
+                }}
+              >
+                {/* Background profile image with low opacity */}
+                <Image
+                  source={CelinaImg}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    position: "absolute",
+                    resizeMode: "cover",
+                    opacity: 0.5,
+                  }}
+                />
+                {/* White overlay */}
+                <View
+                  style={{
+                    position: "absolute",
+                    width: "100%",
+                    height: "100%",
+                    backgroundColor: "#fff",
+                    opacity: 0.85,
+                  }}
+                />
+                {/* Number text */}
+                <Text
+                  style={{
+                    fontSize: hp("3%"),
+                    fontWeight: "bold",
+                    color: "#000",
+                    zIndex: 1,
+                  }}
+                >
+                  3
+                </Text>
+              </View>
+            </View>
+
+            {/* Emoji */}
+            <Text style={{ fontSize: hp("3%"), marginBottom: hp("1%") }}>
+              😜
+            </Text>
+
+            {/* Name and age */}
+            <Text
+              style={{
+                fontSize: hp("3%"),
+                fontWeight: "bold",
+                color: "#000",
+                marginBottom: hp("1%"),
+              }}
+            >
+              Malina Perez 23
+            </Text>
+
+            {/* Location */}
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                marginBottom: hp("1%"),
+              }}
+            >
+              <Image
+                source={locationImg}
+                style={{
+                  width: wp("4%"),
+                  height: wp("4%"),
+                  resizeMode: "contain",
+                }}
+              />
+              <Text
+                style={{
+                  fontSize: hp("1.5%"),
+                  color: "#000",
+                  marginLeft: wp("1%"),
+                }}
+              >
+                San Diego, CA
+              </Text>
+            </View>
+
+            {/* Mutual interests header */}
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                marginBottom: 0,
+                width: "100%",
+                justifyContent: "center",
+                marginLeft: wp("12%"),
+                gap: wp("1%"),
+              }}
+            >
+              {/* Left line */}
               <View
                 style={{
                   backgroundColor: "#000",
@@ -320,26 +299,61 @@ const GoldMatch = () => {
                   width: wp("9%"),
                 }}
               />
-              <View style={{ marginLeft: -wp("4%") }}>
-                <ArrowRight color="#000" opacity={1} />
-              </View>
-              <View style={{ marginLeft: -wp("5.5%") }}>
-                <ArrowRight color="#000" opacity={0.3} />
+              {/* Text */}
+              <Text
+                style={{
+                  fontSize: hp("2.2%"),
+                  fontWeight: "600",
+                  color: "#000",
+                  marginHorizontal: wp("2%"),
+                }}
+              >
+                9 Mutual Interests
+              </Text>
+              {/* Right line and arrows */}
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <View
+                  style={{
+                    backgroundColor: "#000",
+                    height: hp("0.4%"),
+                    width: wp("9%"),
+                  }}
+                />
+                <View style={{ marginLeft: -wp("4%") }}>
+                  <ArrowRight color="#000" opacity={1} />
+                </View>
+                <View style={{ marginLeft: -wp("5.5%") }}>
+                  <ArrowRight color="#000" opacity={0.3} />
+                </View>
               </View>
             </View>
           </View>
-        </View>
 
-        {/* Interest tags */}
-        <View style={{ alignItems: "center", flex: 1, marginTop: -hp("2.5%") }}>
-          {interestData.map((interest, index) => (
-            <InterestItem
-              key={index}
-              text={interest.text}
-              gradientBg={interest.gradientBg}
-            />
-          ))}
-        </View>
+          {/* Interest tags */}
+          <View
+            style={{
+              alignItems: "center",
+              flex: 1,
+              flexShrink: 1,
+              flexGrow: 1,
+              marginTop: -hp("2.5%"),
+            }}
+          >
+            {interestData.map((interest, index) => (
+              <InterestItem
+                key={index}
+                text={interest.text}
+                gradientBg={interest.gradientBg}
+              />
+            ))}
+          </View>
+        </ScrollView>
       </View>
 
       {/* Bottom navigation with Say Hi button */}
